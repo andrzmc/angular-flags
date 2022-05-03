@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
+  @Output() onSearchWord = new EventEmitter<string>();
+
   public keyword!: string;
   public data: any[] = [];
 
@@ -19,8 +21,6 @@ export class SearchComponent implements OnInit {
   }
 
   onChangeSearch(value: string) {
-    console.log('ON CHANGE SEARCH ============>', value);
-    // fetch remote data from here
-    // And reassign the 'data' which is binded to 'data' property.
+    this.onSearchWord.emit(value);
   }
 }

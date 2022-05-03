@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,7 @@ import { NavbarModule } from './shared/components/layouts/navbar/navbar.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, NavbarModule],
+  imports: [BrowserModule, AppRoutingModule, NavbarModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
