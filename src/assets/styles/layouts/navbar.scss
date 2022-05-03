@@ -6,4 +6,18 @@
   min-height: 70px;
   box-shadow: 0px 0px 16px rgba(62, 70, 95, 0.1);
   background-color: $color-white;
+  padding: 0 1em;
+
+  h1 {
+    text-transform: uppercase;
+    background: linear-gradient(
+      -45deg,
+      $color-orange,
+      $color-magenta,
+      $color-blue,
+      $color-green
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
