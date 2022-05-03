@@ -1,4 +1,7 @@
 <div class="searchable-box-wrapper grid-third-width">
   <h3>Search a flag by Country name</h3>
-  <app-search (onSearchWord)="searchByCountryName($event)"></app-search>
+  <app-search
+    [results]="results"
+    (onSearchWord)="searchByCountryName($event)"
+  ></app-search>
 </div>

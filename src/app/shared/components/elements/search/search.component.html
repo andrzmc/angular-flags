@@ -1,18 +1,12 @@
 <ng-autocomplete
-  [data]="data"
+  [data]="results"
   [searchKeyword]="keyword"
   placeholder="Search..."
   (selected)="selectEvent($event)"
   (inputChanged)="onChangeSearch($event)"
-  [itemTemplate]="itemTemplate"
-  [notFoundTemplate]="notFoundTemplate"
 >
 </ng-autocomplete>
 
-<ng-template #itemTemplate let-item>
-  <a [innerHTML]="item.name"></a>
-</ng-template>
-
-<ng-template #notFoundTemplate let-notFound>
-  <span>Not Found</span>
-</ng-template>
+<div *ngFor="let result of results">
+  <a>{{ result.label }}</a>
+</div>

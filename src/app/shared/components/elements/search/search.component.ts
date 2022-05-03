@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { BasicFormModel } from 'src/app/shared/models/forms/basic';
 
 @Component({
   selector: 'app-search',
@@ -6,6 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
+  @Input() results!: BasicFormModel[];
   @Output() onSearchWord = new EventEmitter<string>();
 
   public keyword!: string;
@@ -14,6 +16,10 @@ export class SearchComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngOnChanges() {
+    console.log('ACTUALIZO ', this.results);
+  }
 
   selectEvent(item: any) {
     console.log('SELECT ============>', item);

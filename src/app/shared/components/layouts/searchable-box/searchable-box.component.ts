@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasicFormModel } from 'src/app/shared/models/forms/basic';
 import { FlagsService } from 'src/app/shared/services/flags/flags.service';
 
 @Component({
@@ -7,11 +8,15 @@ import { FlagsService } from 'src/app/shared/services/flags/flags.service';
   styleUrls: ['./searchable-box.component.scss'],
 })
 export class SearchableBoxComponent implements OnInit {
+  public results: BasicFormModel[] = [];
+
   constructor(private flags: FlagsService) {}
 
   ngOnInit(): void {}
 
   searchByCountryName(value: string) {
-    this.flags.searchFlagsByCountryName(value);
+    this.flags
+      .searchFlagsByCountryName(value)
+      .then((results) => (this.results = results));
   }
 }
