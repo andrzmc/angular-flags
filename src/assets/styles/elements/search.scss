@@ -1,0 +1,22 @@
+.search-wrapper {
+  position: relative;
+
+  .search-results {
+    position: absolute;
+    box-shadow: 0px 0px 16px rgba(62, 70, 95, 0.1);
+    background-color: $color-white;
+    border-radius: 5px;
+    max-height: 250px;
+    overflow-y: auto;
+
+    .search-result {
+      padding: 0.5em;
+
+      &:hover {
+        background-color: $color-black;
+        color: $color-white;
+        cursor: pointer;
+      }
+    }
+  }
+}

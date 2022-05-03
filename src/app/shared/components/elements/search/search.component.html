@@ -1,12 +1,15 @@
-<ng-autocomplete
-  [data]="results"
-  [searchKeyword]="keyword"
-  placeholder="Search..."
-  (selected)="selectEvent($event)"
-  (inputChanged)="onChangeSearch($event)"
->
-</ng-autocomplete>
-
-<div *ngFor="let result of results">
-  <a>{{ result.label }}</a>
+<div class="search-wrapper">
+  <ng-autocomplete
+    [data]="results"
+    [searchKeyword]="keyword"
+    placeholder="Search..."
+    (selected)="selectEvent($event)"
+    (inputChanged)="onChangeSearch($event)"
+  >
+  </ng-autocomplete>
+  <div class="search-results">
+    <div class="search-result" *ngFor="let result of results">
+      <a> {{ result.label }}</a>
+    </div>
+  </div>
 </div>
