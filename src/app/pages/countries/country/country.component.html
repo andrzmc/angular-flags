@@ -1,1 +1,46 @@
-<p>country works!</p>
+<section class="country-wrapper">
+  <div class="country-container flexbox-center" *ngIf="country">
+    <div class="country-information grid-full-width">
+      <div>
+        <h1>{{ country.name.official }}</h1>
+        <h4 *ngIf="country.capital.length">
+          Capital: {{ country.capital[0] }}
+        </h4>
+        <p><strong>Name Variants</strong></p>
+        <ul>
+          <li *ngFor="let alt of country.altSpellings">
+            {{ alt }}
+          </li>
+        </ul>
+      </div>
+      <img
+        *ngIf="country.coatOfArms"
+        class="country-flag"
+        [src]="country.coatOfArms.png"
+        [alt]="country.name.official"
+      />
+      <img
+        *ngIf="country.flags"
+        class="country-flag"
+        [src]="country.flags.png"
+        [alt]="country.name.official"
+      />
+    </div>
+    <div class="grid-full-width">
+      <h3>Maps</h3>
+      <a
+        *ngIf="country.maps.googleMaps"
+        [href]="country.maps.googleMaps"
+        target="_blank"
+        >Google Maps</a
+      >
+      <br />
+      <a
+        *ngIf="country.maps.openStreetMaps"
+        [href]="country.maps.openStreetMaps"
+        target="_blank"
+        >Open Street Maps</a
+      >
+    </div>
+  </div>
+</section>

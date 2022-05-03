@@ -18,10 +18,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  ngOnChanges() {
-    console.log('ACTUALIZO ', this.results);
-  }
-
   selectEvent(value: string) {
     this.onSelected.emit(value);
   }
