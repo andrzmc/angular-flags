@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CountriesComponent } from './countries.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: CountriesComponent,
+    redirectTo: 'AL',
+    pathMatch: 'full',
+  },
+  {
+    path: ':id',
+    loadChildren: () =>
+      import('./country/country.module').then((m) => m.CountryModule),
   },
 ];
 

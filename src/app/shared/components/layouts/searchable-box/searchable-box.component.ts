@@ -22,6 +22,6 @@ export class SearchableBoxComponent implements OnInit {
   }
 
   redirectToCountry(value: string) {
-    this.router.navigate([`/countries/${value}`]);
+    this.router.navigate(['countries', value]);
   }
 }
