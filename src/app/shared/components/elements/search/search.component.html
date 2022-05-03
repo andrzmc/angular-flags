@@ -9,7 +9,7 @@
   </ng-autocomplete>
   <div class="search-results">
     <div class="search-result" *ngFor="let result of results">
-      <a> {{ result.label }}</a>
+      <a (click)="selectEvent(result.value)"> {{ result.label }}</a>
     </div>
   </div>
 </div>

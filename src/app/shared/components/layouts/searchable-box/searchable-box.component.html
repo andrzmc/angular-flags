@@ -3,5 +3,6 @@
   <app-search
     [results]="results"
     (onSearchWord)="searchByCountryName($event)"
+    (onSelected)="redirectToCountry($event)"
   ></app-search>
 </div>

@@ -9,6 +9,7 @@ import { BasicFormModel } from 'src/app/shared/models/forms/basic';
 export class SearchComponent implements OnInit {
   @Input() results!: BasicFormModel[];
   @Output() onSearchWord = new EventEmitter<string>();
+  @Output() onSelected = new EventEmitter<string>();
 
   public keyword!: string;
   public data: any[] = [];
@@ -21,9 +22,8 @@ export class SearchComponent implements OnInit {
     console.log('ACTUALIZO ', this.results);
   }
 
-  selectEvent(item: any) {
-    console.log('SELECT ============>', item);
-    // do something with selected item
+  selectEvent(value: string) {
+    this.onSelected.emit(value);
   }
 
   onChangeSearch(value: string) {
